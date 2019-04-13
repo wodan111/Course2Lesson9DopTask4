@@ -36,7 +36,8 @@ public class Main {
 		System.out.println(y);
 		
 		Optional<Integer> z = Arrays.stream(str.split(",")).map(String::trim).filter(s -> s.matches("[0-32768]+"))
-				.map(Integer::valueOf).max((a, b) -> a - b);
+				.map(Integer::valueOf)
+				.max((a, b) -> a - b);
 		
 		return z.get();
 	}
