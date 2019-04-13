@@ -35,7 +35,9 @@ public class Main {
 				.collect(Collectors.toCollection(ArrayList::new));
 		System.out.println(y);
 		
-		Optional<Integer> z = Arrays.stream(str.split(",")).map(String::trim).filter(s -> s.matches("[0-32768]+"))
+		Optional<Integer> z = Arrays.stream(str.split(","))
+				.map(String::trim)
+				.filter(s -> s.matches("-?\\d+"))
 				.map(Integer::valueOf)
 				.max((a, b) -> a - b);
 		
