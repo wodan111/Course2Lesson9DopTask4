@@ -35,10 +35,7 @@ public class Main {
 				.collect(Collectors.toCollection(ArrayList::new));
 		System.out.println(y);
 		
-		Optional<Integer> z = Arrays.stream(str.split(","))
-				.map(String::trim)
-				.filter(s -> s.matches("-?\\d+"))
-				.map(Integer::valueOf)
+		Optional<Integer> z = y.stream()
 				.max((a, b) -> a - b);
 		
 		return z.get();
